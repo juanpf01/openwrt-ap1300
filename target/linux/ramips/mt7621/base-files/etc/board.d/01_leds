@@ -62,6 +62,9 @@ confiabits,mt7621-v1|\
 genexis,pulse-ex400|\
 netis,n6)
 	ucidef_set_led_netdev "wan" "wan" "green:wan" "wan" "link tx rx"
+cudy,ap1300outdoor)
+	ucidef_set_led_netdev "lan" "lan" "green:lan" "lan"
+	ucidef_set_led_netdev "internet" "internet" "green:wan-online" "wan"
 	;;
 cudy,wr2100)
 	ucidef_set_led_netdev "lan1" "lan1" "green:lan1" "lan1"
