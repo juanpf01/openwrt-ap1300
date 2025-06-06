@@ -1,0 +1,32 @@
+{
+  // A human‐readable name for the Codespace / Dev Container
+  "name": "OpenWrt AP1300 Build",
+
+  // Build instructions for the container: use the Dockerfile in the same folder
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  // VS Code settings to apply inside the container
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+
+  // List any VS Code extensions you want automatically installed
+  "extensions": [
+    // e.g. "ms-vscode.cpptools" if you want C/C++ IntelliSense
+  ],
+
+  // Ports to forward from inside the container back to your local machine
+  "forwardPorts": [
+    // e.g. 8080, if you run a web server inside Container
+  ],
+
+  // A command that always runs after the container is built, before you get a prompt
+  // (This is optional; here it just prints a reminder.)
+  "postCreateCommand": "echo \"Dev container ready—clone or fetch OpenWrt in /workspace/openwrt.\"",
+
+  // User to run as inside the container; ‘root’ is fine for most build systems
+  "remoteUser": "root"
+}
