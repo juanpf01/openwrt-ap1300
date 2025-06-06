@@ -698,6 +698,19 @@ define Device/cudy_m1300-v2
 endef
 TARGET_DEVICES += cudy_m1300-v2
 
+define Device/cudy_ap1300
+  DTS := mt7621_cudy_ap1300-indoor
+  IMAGE_SIZE := 15872k
+  DEVICE_VENDOR := Cudy
+  DEVICE_MODEL := AP1300 Indoor
+  DEVICE_PACKAGES := kmod-mt7603 kmod-mt76x2
+  SUPPORTED_DEVICES := cudy_ap1300
+  IMAGES += factory.bin sysupgrade.bin
+  IMAGE/sysupgrade.bin := sysupgrade-tar | append-metadata
+  IMAGE/factory.bin := append-kernel | pad-to 4M | append-rootfs | pad-rootfs | append-metadata
+endef
+TARGET_DEVICES += cudy_ap1300
+
 define Device/cudy_ap1300outdoor
   $(Device/dsa-migration)
   $(Device/uimage-lzma-loader)
